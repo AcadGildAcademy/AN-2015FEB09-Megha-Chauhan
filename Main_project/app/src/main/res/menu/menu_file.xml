@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      xmlns:apps="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/add_user" android:icon="@drawable/sign_in_user"
+        apps:showAsAction="always" android:title=""></item>
+
+    <item android:id="@+id/home" apps:showAsAction="never" android:title="HOME"></item>
+    <item android:id="@+id/now_on_sale" apps:showAsAction="never" android:title="NOW ON SALE"></item>
+    <item android:id="@+id/upcomming_events" apps:showAsAction="never" android:title="UPCOMMING EVENTS"></item>
+    <item android:id="@+id/past_events" apps:showAsAction="never" android:title="PAST EVENTS"></item>
+    <item android:id="@+id/about" apps:showAsAction="never" android:title="ABOUT"></item>
+    <item android:id="@+id/contact_us" apps:showAsAction="never" android:title="CONTACT US"></item>
+</menu>
