@@ -28,14 +28,13 @@ public class ServiceHandler
         return this.makeServiceCall(url,method,null);
     }
 
-    public String makeServiceCall(String url,int method,List<NameValuePair> params)
+    public String makeServiceCall(String url,int method,List params)
     {
         try
         {
             DefaultHttpClient httpClient=new DefaultHttpClient();
             HttpEntity httpEntity=null;
             HttpResponse httpResponse=null;
-
             if(method==POST)
             {
                 HttpPost httpPost=new HttpPost(url);
