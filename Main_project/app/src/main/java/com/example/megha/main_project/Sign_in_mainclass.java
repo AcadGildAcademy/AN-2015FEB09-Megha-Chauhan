@@ -10,11 +10,9 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -42,6 +40,9 @@ public class Sign_in_mainclass extends Activity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signin_page);
+
+
+
         dataList = new ArrayList<HashMap<String, String>>();
         user_name = (EditText) findViewById(R.id.et_username);
         user_password = (EditText) findViewById(R.id.et_password);
@@ -76,7 +77,6 @@ public class Sign_in_mainclass extends Activity {
 
         try
         {
-                Toast.makeText(getApplicationContext(),"LOGIN FAILED",Toast.LENGTH_LONG).show();
                 List<NameValuePair> param = new ArrayList<NameValuePair>();
                 String username=user_name.getText().toString();
                 String password=user_password.getText().toString();
@@ -105,6 +105,7 @@ public class Sign_in_mainclass extends Activity {
     protected void onPostExecute(Void s)
     {
             super.onPostExecute(s);
+            pDialog.dismiss();
     }
     }
 }
