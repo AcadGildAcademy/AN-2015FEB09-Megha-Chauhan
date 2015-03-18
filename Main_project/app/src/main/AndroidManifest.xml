@@ -13,6 +13,8 @@
         <activity android:name=".Sign_in_mainclass"></activity>
         <activity android:name=".ServiceHandler"></activity>
         <activity android:name=".Sign_up_dialog"></activity>
+
+
     </application>
 
 </manifest>
