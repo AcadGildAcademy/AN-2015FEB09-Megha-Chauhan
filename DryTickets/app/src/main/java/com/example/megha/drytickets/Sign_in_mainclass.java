@@ -1,4 +1,4 @@
-package com.example.megha.main_project;
+package com.example.megha.drytickets;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -15,13 +15,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.security.Key;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -29,9 +26,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Created by megha on 3/11/2015.
+ * Created by megha on 3/20/2015.
  */
-
 public class Sign_in_mainclass extends Activity {
     EditText user_name, user_password;
     Button signin, cancel;
@@ -47,7 +43,7 @@ public class Sign_in_mainclass extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        Toast.makeText(getApplicationContext(),"entered",Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "entered", Toast.LENGTH_LONG).show();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signin_page);
         dataList = new ArrayList<HashMap<String, String>>();
@@ -56,27 +52,66 @@ public class Sign_in_mainclass extends Activity {
         remember_password=(CheckBox)findViewById(R.id.remember_check);
         loadMySavedPrefrences();
         signin = (Button) findViewById(R.id.signin_btn);
-        cancel = (Button) findViewById(R.id.cancel_btn);
+        //cancel = (Button) findViewById(R.id.cancel_btn);
         signin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
             {
                 String username=user_name.getText().toString();
                 String password=user_password.getText().toString();
-                new SubClass().execute();
-
-                saveMySharedPrefrences("CHECKBOX",remember_password.isChecked());
-                String str1=user_name.getText().toString();
-                String str2=user_password.getText().toString();
-                saveMySharedPrefrences("USERNAME",str1);
-                saveMySharedPrefrences("PASSWORD",str2);
+                //final String email = user_name.getText().toString();
+                //final String pass = user_password.getText().toString();
+                if((username.isEmpty())||(password.isEmpty()))
+                {
+                    Toast.makeText(getApplicationContext(),"ENTER THE REQUIRED FIELDS",Toast.LENGTH_LONG).show();
+                }
+               /* else if (!isValidEmail(username))
+                {
+                    Toast.makeText(getApplicationContext(),"ENTER email",Toast.LENGTH_LONG).show();
+                    user_name.setError("Invalid Email");
+                }
+                else if (!isValidPassword(password))
+                {
+                    Toast.makeText(getApplicationContext(),"ENTER password",Toast.LENGTH_LONG).show();
+                    user_password.setError("Invalid Password");
+                }*/
+                else
+                {
+                    new SubClass().execute();
+                    saveMySharedPrefrences("CHECKBOX",remember_password.isChecked());
+                    if (remember_password.isChecked())
+                    {
+                        String str1=user_name.getText().toString();
+                        String str2=user_password.getText().toString();
+                        saveMySharedPrefrences("USERNAME",str1);
+                        saveMySharedPrefrences("PASSWORD",str2);
+                    }
+                }
             }
         });
     }
 
+    private boolean isValidPassword(String pass)
+    {
+        if (pass != null && pass.length() > 6) {
+            return true;
+        }
+        return false;
+    }
+
+    private boolean isValidEmail(String username)
+    {
+        String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+
+        Pattern pattern = Pattern.compile(EMAIL_PATTERN);
+        Matcher matcher = pattern.matcher(username);
+        return matcher.matches();
+    }
+
     private void saveMySharedPrefrences(String Key, boolean values)
     {
-        SharedPreferences sp =PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         SharedPreferences.Editor ed =sp.edit();
         ed.putBoolean(Key,values);
         ed.commit();
@@ -93,7 +128,7 @@ public class Sign_in_mainclass extends Activity {
     private void loadMySavedPrefrences()
     {
         SharedPreferences sp=PreferenceManager.getDefaultSharedPreferences(this);
-        String str1=sp.getString("USERNAME","abc@gmail.com");
+        String str1=sp.getString("USERNAME", "abc@gmail.com");
         String str2=sp.getString("PASSWORD","def");
         Boolean ck=sp.getBoolean("CHECKBOX",true);
         user_name.setText(str1);
@@ -121,6 +156,7 @@ public class Sign_in_mainclass extends Activity {
             String password=user_password.getText().toString();
             try
             {
+                //Toast.makeText(getApplicationContext(),"helloo",Toast.LENGTH_LONG).show();
                 List param = new ArrayList();
                 param.add(new BasicNameValuePair("email", username));
                 param.add(new BasicNameValuePair("password", password));
@@ -165,3 +201,4 @@ public class Sign_in_mainclass extends Activity {
         }
     }
 }
+
