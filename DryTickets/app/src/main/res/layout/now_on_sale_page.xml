@@ -17,6 +17,4 @@
         android:padding="5dp"
         android:textColor="@color/abc_background_cache_hint_selector_material_dark"
         android:layout_gravity="center_horizontal" />
-
-
 </LinearLayout>

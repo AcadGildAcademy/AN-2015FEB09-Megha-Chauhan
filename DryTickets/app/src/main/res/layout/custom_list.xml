@@ -7,5 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="577dp"
         android:id="@+id/custom_list"
-        android:choiceMode="singleChoice" />
+        android:choiceMode="singleChoice"
+        android:divider="@color/red"
+        android:dividerHeight="2dip"/>
 </LinearLayout>
