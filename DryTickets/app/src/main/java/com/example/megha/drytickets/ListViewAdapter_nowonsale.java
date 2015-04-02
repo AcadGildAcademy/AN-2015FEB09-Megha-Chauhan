@@ -15,7 +15,7 @@ import java.util.HashMap;
 /**
  * Created by megha on 3/30/2015.
  */
-public class ListViewAdapter extends BaseAdapter
+public class ListViewAdapter_nowonsale extends BaseAdapter
 {
     // Declare Variables
     Context context;
@@ -23,7 +23,7 @@ public class ListViewAdapter extends BaseAdapter
     ArrayList<HashMap<String, String>> data;
     ImageLoader imageLoader;
     HashMap<String, String> resultp = new HashMap<String, String>();
-    public ListViewAdapter(Context context,ArrayList<HashMap<String, String>> arraylist) {
+    public ListViewAdapter_nowonsale(Context context, ArrayList<HashMap<String, String>> arraylist) {
         this.context = context;
         data = arraylist;
         imageLoader = new ImageLoader(context);
@@ -66,10 +66,11 @@ public class ListViewAdapter extends BaseAdapter
                 resultp = data.get(position);
                 Intent intent = new Intent(context, SingleItemView.class);
                 intent.putExtra("image_path", resultp.get(Now_on_sale_firstpage.IMAGE_PATH));
-                intent.putExtra("title", resultp.get(Now_on_sale_firstpage.TITLE));
-                intent.putExtra("description", resultp.get(Now_on_sale_firstpage.DESCRIPTION));
-                intent.putExtra("event_date", resultp.get(Now_on_sale_firstpage.DATE));
-                intent.putExtra("event_time", resultp.get(Now_on_sale_firstpage.TIME));
+                //intent.putExtra("event_name", resultp.get(Now_on_sale_firstpage.EVENT_NAME));
+                intent.putExtra("desc", resultp.get(Now_on_sale_firstpage.DESCRIPTION));
+                intent.putExtra("price", resultp.get(Now_on_sale_firstpage.PRICE));
+                intent.putExtra("date", resultp.get(Now_on_sale_firstpage.DATE));
+                intent.putExtra("time", resultp.get(Now_on_sale_firstpage.TIME));
                 intent.putExtra("venue", resultp.get(Now_on_sale_firstpage.VENUE));
                 // Start SingleItemView Class
                 context.startActivity(intent);

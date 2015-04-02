@@ -4,41 +4,38 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.10">
-
-        </LinearLayout>
 
     <LinearLayout
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.10"></LinearLayout>
+        android:layout_weight="1.02">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.10"></LinearLayout>
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:id="@+id/type_category"
+            android:padding="5dp"
+            android:layout_marginLeft="10dp"/>
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.10"></LinearLayout>
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:id="@+id/price"
+            android:padding="5dp"
+            android:layout_marginLeft="6dp"/>
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.10"></LinearLayout>
-
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.10"></LinearLayout>
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="BUY TICKET"
+            android:textSize="17dp"
+            android:textStyle="bold"
+            android:id="@+id/buy_ticket"
+            android:layout_marginLeft="5dp"/>
+    </LinearLayout>
 </LinearLayout>

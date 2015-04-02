@@ -47,6 +47,11 @@ public class First_page extends ActionBarActivity
             Intent intent=new Intent(this, Now_on_sale_firstpage.class);
             startActivity(intent);
         }
+        else if(id==R.id.ticket_booking)
+        {
+            Intent intent=new Intent(this, Ticket_booking.class);
+            startActivity(intent);
+        }
         return super.onOptionsItemSelected(item);
     }
 }

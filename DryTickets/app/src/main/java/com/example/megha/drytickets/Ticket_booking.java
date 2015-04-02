@@ -1,85 +1,74 @@
 package com.example.megha.drytickets;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.widget.ListView;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
-
 /**
- * Created by megha on 3/20/2015.
+ * Created by megha on 4/2/2015.
  */
-public class Now_on_sale_firstpage extends Activity
+public class Ticket_booking extends ActionBarActivity
 {
-    // Declare Variables
+
+        // Declare Variables
     JSONObject jsonobject;
     JSONArray jsonarray;
     ListView listview;
-    ListViewAdapter_nowonsale adapter;
+    ListViewAdapter_tickets adapter;
     ProgressDialog mProgressDialog;
     ArrayList<HashMap<String, String>> arraylist;
-    //static String EVENT_NAME = "event_name";
-    static String DESCRIPTION = "desc";
-    static String DATE = "date";
-    static String TIME = "time";
+    static String ID = "id";
+    static String TYPE_CATEGORY = "type_category";
     static String PRICE = "price";
-    static String VENUE = "venue";
-    static String IMAGE_PATH = "image_path";
-
+    static String EVENT_ID = "event_id";
+    static String EVENT_NAME = "event_name";
     @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Get the view from listview_main.xml
-        setContentView(R.layout.custom_list);
-        // Execute DownloadJSON AsyncTask
+        setContentView(R.layout.ticket_listview);
         new DownloadJSON().execute();
+        getActionBar();
     }
-    // DownloadJSON AsyncTask
+        // DownloadJSON AsyncTask
     private class DownloadJSON extends AsyncTask<Void, Void, Void>
     {
         @Override
         protected void onPreExecute()
         {
             super.onPreExecute();
-            mProgressDialog = new ProgressDialog(Now_on_sale_firstpage.this);
-            mProgressDialog.setTitle("PLEASE wait for a while");
+            mProgressDialog = new ProgressDialog(Ticket_booking.this);
+            mProgressDialog.setTitle("Android JSON Parse");
             mProgressDialog.setMessage("Loading...");
             mProgressDialog.setIndeterminate(false);
             mProgressDialog.show();
         }
-
         @Override
         protected Void doInBackground(Void... params)
         {
             // Create an array
             arraylist = new ArrayList<HashMap<String, String>>();
             // Retrieve JSON Objects from the given URL address
-            jsonobject = JSONfunction.getJSONfromURL("http://bishasha.com/json/now_on_sale_events.php");
+            jsonobject = JSONfunction.getJSONfromURL("http://bishasha.com/json/ticket_booking.php");
             try
             {
                 // Locate the array name in JSON
-                jsonarray = jsonobject.getJSONArray("events");
+                jsonarray = jsonobject.getJSONArray("ticket_booking");
                 for (int i = 0; i < jsonarray.length(); i++)
                 {
                     HashMap<String, String> map = new HashMap<String, String>();
                     jsonobject = jsonarray.getJSONObject(i);
-
-                   // map.put("title", jsonobject.getString("title"));
-                    map.put("desc", jsonobject.getString("desc"));
-                    map.put("date", jsonobject.getString("date"));
-                    map.put("time", jsonobject.getString("time"));
+                    // Retrive JSON Objects
+                    map.put("type_category", jsonobject.getString("type_category"));
                     map.put("price", jsonobject.getString("price"));
-                    map.put("venue", jsonobject.getString("venue"));
-                    map.put("image_path", jsonobject.getString("image_path"));
-                    // Set the JSON Objects into the array
+                    map.put("event_id", jsonobject.getString("event_id"));
+                    map.put("event_name", jsonobject.getString("event_name"));
                     arraylist.add(map);
                 }
             }
@@ -94,9 +83,9 @@ public class Now_on_sale_firstpage extends Activity
         protected void onPostExecute(Void args)
         {
             // Locate the listview in listview_main.xml
-            listview = (ListView) findViewById(R.id.custom_list);
+            listview = (ListView) findViewById(R.id.ticket_list);
             // Pass the results into ListViewAdapter.java
-            adapter = new ListViewAdapter_nowonsale(Now_on_sale_firstpage.this, arraylist);
+            adapter = new ListViewAdapter_tickets(Ticket_booking.this, arraylist);
             // Set the adapter to the ListView
             listview.setAdapter(adapter);
             // Close the progressdialog
