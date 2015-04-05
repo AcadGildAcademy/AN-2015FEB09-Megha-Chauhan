@@ -70,7 +70,6 @@ public class ListViewAdapter_nowonsale extends BaseAdapter
                 Intent intent = new Intent(context, SingleItemView.class);
                 intent.putExtras(bundle);
                 context.startActivity(intent);
-
             }
         });
         return itemView;

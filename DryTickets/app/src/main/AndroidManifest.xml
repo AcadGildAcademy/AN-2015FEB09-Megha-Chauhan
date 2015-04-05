@@ -16,6 +16,6 @@
         <activity android:name=".Now_on_sale_firstpage"></activity>
         <activity android:name=".Sign_up_mainclass"></activity>
         <activity android:name=".SingleItemView"></activity>
+        <activity android:name=".Ticket_booking"></activity>
     </application>
-
 </manifest>
