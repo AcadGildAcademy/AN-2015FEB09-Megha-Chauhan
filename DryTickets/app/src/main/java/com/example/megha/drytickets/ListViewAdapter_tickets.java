@@ -7,6 +7,7 @@ import java.util.HashMap;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -48,33 +49,35 @@ public class ListViewAdapter_tickets extends BaseAdapter {
     }
     public View getView(final int position, View convertView, ViewGroup parent)
     {
-        ImageView image_path;
         TextView type_category;
         TextView price;
         Button button;
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View itemView = inflater.inflate(R.layout.ticket_selection, parent, false);
-        // Get the position
         resultp = data.get(position);
         type_category = (TextView) itemView.findViewById(R.id.type_category);
         price = (TextView) itemView.findViewById(R.id.price);
         //button = (Button) itemView.findViewById(R.id.buy_button);
-
         type_category.setText(resultp.get(Ticket_booking.TYPE_CATEGORY));
         price.setText(resultp.get(Ticket_booking.PRICE));
-
-        itemView.setOnClickListener(new OnClickListener() {
-
+        itemView.setOnClickListener(new OnClickListener()
+        {
             @Override
-            public void onClick(View arg0) {
+            public void onClick(View arg0)
+            {
                 // Get the position
-            /*    resultp = data.get(position);
-                Intent intent = new Intent(context, seat_allocation.class);
-                intent.putExtra("type_category", resultp.get(Ticket_booking.TYPE_CATEGORY));
-                intent.putExtra("price", resultp.get(Ticket_booking.PRICE));
-                intent.putExtra("event_id",resultp.get(Ticket_booking.EVENT_ID));
-                intent.putExtra("event_name", resultp.get(Ticket_booking.EVENT_NAME));
-                context.startActivity(intent);*/
+                resultp = data.get(position);
+                Bundle bundle= new Bundle();
+                //Bundle bundle = intent.getExtras();
+                bundle.putString("type_category", resultp.get(Ticket_booking.TYPE_CATEGORY ));
+                bundle.putString("price", resultp.get(Ticket_booking.PRICE));
+                //bundle.putString("event_id", resultp.get(Now_on_sale_firstpage.DATE));
+                //bundle.putString("time", resultp.get(Now_on_sale_firstpage.TIME));
+                //bundle.putString("venue", resultp.get(Now_on_sale_firstpage.VENUE));
+                // Start SingleItemView Class
+                Intent intent = new Intent(context, Seat_allocation.class);
+                intent.putExtras(bundle);
+                context.startActivity(intent);
             }
         });
         return itemView;

@@ -26,6 +26,7 @@ public class Now_on_sale_firstpage extends Activity
     ProgressDialog mProgressDialog;
     ArrayList<HashMap<String, String>> arraylist;
     //static String EVENT_NAME = "event_name";
+    static String ID = "id";
     static String DESCRIPTION = "desc";
     static String DATE = "date";
     static String TIME = "time";
@@ -51,7 +52,7 @@ public class Now_on_sale_firstpage extends Activity
             super.onPreExecute();
             mProgressDialog = new ProgressDialog(Now_on_sale_firstpage.this);
             mProgressDialog.setTitle("PLEASE wait for a while");
-            mProgressDialog.setMessage("Loading...");
+            mProgressDialog.setMessage("Loading...events page");
             mProgressDialog.setIndeterminate(false);
             mProgressDialog.show();
         }
@@ -71,14 +72,13 @@ public class Now_on_sale_firstpage extends Activity
                 {
                     HashMap<String, String> map = new HashMap<String, String>();
                     jsonobject = jsonarray.getJSONObject(i);
-
-                   // map.put("title", jsonobject.getString("title"));
+                    map.put("image_path", jsonobject.getString("image_path"));
+                    //map.put("id", jsonobject.getString("id"));
                     map.put("desc", jsonobject.getString("desc"));
                     map.put("date", jsonobject.getString("date"));
                     map.put("time", jsonobject.getString("time"));
                     map.put("price", jsonobject.getString("price"));
                     map.put("venue", jsonobject.getString("venue"));
-                    map.put("image_path", jsonobject.getString("image_path"));
                     // Set the JSON Objects into the array
                     arraylist.add(map);
                 }

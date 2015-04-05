@@ -49,8 +49,8 @@ public class First_page extends ActionBarActivity
         }
         else if(id==R.id.ticket_booking)
         {
-            Intent intent=new Intent(this, Ticket_booking.class);
-            startActivity(intent);
+            //Intent intent=new Intent(this, Ticket_booking.class);
+            //startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }

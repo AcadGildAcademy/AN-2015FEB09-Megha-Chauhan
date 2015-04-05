@@ -2,6 +2,7 @@ package com.example.megha.drytickets;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,35 +45,30 @@ public class ListViewAdapter_nowonsale extends BaseAdapter
     {
         // Declare Variables
         ImageView image;
-        TextView title;
-        TextView description;
-        TextView event_date;
-        TextView event_time;
-        TextView venue;
+
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View itemView = inflater.inflate(R.layout.now_on_sale_page, parent, false);
         resultp = data.get(position);     // Get the position
-                // Locate the ImageView in listview_item.xml
         image = (ImageView) itemView.findViewById(R.id.image);
-                // Capture position and set results to the ImageView
-                // Passes flag images URL into ImageLoader.class
         imageLoader.DisplayImage(resultp.get(Now_on_sale_firstpage.IMAGE_PATH), image);
-                // Capture ListView item click
-        itemView.setOnClickListener(new View.OnClickListener() {
-
+        itemView.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View arg0) {
-                // Get the position
+            public void onClick(View arg0)
+            {
                 resultp = data.get(position);
-                Intent intent = new Intent(context, SingleItemView.class);
-                intent.putExtra("image_path", resultp.get(Now_on_sale_firstpage.IMAGE_PATH));
-                //intent.putExtra("event_name", resultp.get(Now_on_sale_firstpage.EVENT_NAME));
-                intent.putExtra("desc", resultp.get(Now_on_sale_firstpage.DESCRIPTION));
-                intent.putExtra("price", resultp.get(Now_on_sale_firstpage.PRICE));
-                intent.putExtra("date", resultp.get(Now_on_sale_firstpage.DATE));
-                intent.putExtra("time", resultp.get(Now_on_sale_firstpage.TIME));
-                intent.putExtra("venue", resultp.get(Now_on_sale_firstpage.VENUE));
+                Bundle bundle= new Bundle();
+                //Bundle bundle = intent.getExtras();
+                bundle.putString("image_path", resultp.get(Now_on_sale_firstpage.IMAGE_PATH));
+                bundle.putString("id", resultp.get(Now_on_sale_firstpage.ID));
+                bundle.putString("desc", resultp.get(Now_on_sale_firstpage.DESCRIPTION));
+                bundle.putString("price", resultp.get(Now_on_sale_firstpage.PRICE));
+                bundle.putString("date", resultp.get(Now_on_sale_firstpage.DATE));
+                bundle.putString("time", resultp.get(Now_on_sale_firstpage.TIME));
+                bundle.putString("venue", resultp.get(Now_on_sale_firstpage.VENUE));
                 // Start SingleItemView Class
+                Intent intent = new Intent(context, SingleItemView.class);
+                intent.putExtras(bundle);
                 context.startActivity(intent);
 
             }

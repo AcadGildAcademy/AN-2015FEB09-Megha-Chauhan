@@ -1,5 +1,6 @@
 package com.example.megha.drytickets;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -14,10 +15,9 @@ import java.util.HashMap;
 /**
  * Created by megha on 4/2/2015.
  */
-public class Ticket_booking extends ActionBarActivity
+public class Ticket_booking extends Activity
 {
-
-        // Declare Variables
+    // Declare Variables
     JSONObject jsonobject;
     JSONArray jsonarray;
     ListView listview;
@@ -44,8 +44,8 @@ public class Ticket_booking extends ActionBarActivity
         {
             super.onPreExecute();
             mProgressDialog = new ProgressDialog(Ticket_booking.this);
-            mProgressDialog.setTitle("Android JSON Parse");
-            mProgressDialog.setMessage("Loading...");
+            mProgressDialog.setTitle("PLEASE wait for a while");
+            mProgressDialog.setMessage("Loading...Ticket Booking page");
             mProgressDialog.setIndeterminate(false);
             mProgressDialog.show();
         }
@@ -67,8 +67,8 @@ public class Ticket_booking extends ActionBarActivity
                     // Retrive JSON Objects
                     map.put("type_category", jsonobject.getString("type_category"));
                     map.put("price", jsonobject.getString("price"));
-                    map.put("event_id", jsonobject.getString("event_id"));
-                    map.put("event_name", jsonobject.getString("event_name"));
+                    //map.put("event_id", jsonobject.getString("event_id"));
+                    //map.put("event_name", jsonobject.getString("event_name"));
                     arraylist.add(map);
                 }
             }
