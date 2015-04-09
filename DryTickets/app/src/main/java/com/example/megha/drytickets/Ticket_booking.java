@@ -67,7 +67,7 @@ public class Ticket_booking extends Activity
                     // Retrive JSON Objects
                     map.put("type_category", jsonobject.getString("type_category"));
                     map.put("price", jsonobject.getString("price"));
-                    //map.put("event_id", jsonobject.getString("event_id"));
+                    map.put("event_id", jsonobject.getString("event_id"));
                     //map.put("event_name", jsonobject.getString("event_name"));
                     arraylist.add(map);
                 }

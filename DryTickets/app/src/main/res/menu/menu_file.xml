@@ -11,6 +11,6 @@
     <item android:id="@+id/now_on_sale" apps:showAsAction="never" android:title="NOW ON SALE"></item>
     <item android:id="@+id/upcomming_events" apps:showAsAction="never" android:title="UPCOMMING EVENTS"></item>
     <item android:id="@+id/past_events" apps:showAsAction="never" android:title="PAST EVENTS"></item>
-    <item android:id="@+id/ticket_booking" apps:showAsAction="never" android:title="ABOUT"></item>
+    <item android:id="@+id/artist_detail_information" apps:showAsAction="never" android:title="ARTISTS"></item>
     <item android:id="@+id/contact_us" apps:showAsAction="never" android:title="CONTACT US"></item>
 </menu>

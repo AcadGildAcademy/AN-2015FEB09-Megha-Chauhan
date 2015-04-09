@@ -10,6 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -47,6 +48,8 @@ public class SingleItemView extends Activity
          price = getIntent().getExtras().getString("price");
          venue = getIntent().getExtras().getString("venue");
 
+        Toast.makeText(getApplication(),id,Toast.LENGTH_LONG).show();
+
          ImageView event_image = (ImageView) findViewById(R.id.image);
          //TextView e_name = (TextView) findViewById(R.id.event_name);
          TextView event_description = (TextView) findViewById(R.id.description);
@@ -70,8 +73,8 @@ public class SingleItemView extends Activity
              public void onClick(View v)
              {
                  Intent intent = new Intent(context,Ticket_booking.class);
-                 Bundle bundle = intent.getExtras();
-                 bundle.putString("id", resultp.get(Now_on_sale_firstpage.ID));
+                 Bundle bundle=new Bundle();
+                 bundle.putString("id",id);
                  startActivity(intent);
              }
          });

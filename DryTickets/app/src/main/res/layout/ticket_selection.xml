@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:background="#ffffffff">
 
 
     <LinearLayout
@@ -18,7 +19,8 @@
             android:textStyle="bold"
             android:id="@+id/type_category"
             android:padding="5dp"
-            android:layout_marginLeft="10dp"/>
+            android:layout_marginLeft="10dp"
+            android:textColor="#ff050505"/>
 
         <TextView
             android:layout_width="120dp"
@@ -26,16 +28,19 @@
             android:textSize="18dp"
             android:id="@+id/price"
             android:padding="5dp"
-            android:layout_marginLeft="6dp"/>
+            android:layout_marginLeft="1dp"
+            android:textColor="#ff050505"/>
 
         <Button
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="120dp"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:text="BUY TICKET"
             android:textSize="17dp"
             android:textStyle="bold"
             android:id="@+id/buy_ticket"
-            android:layout_marginLeft="5dp"/>
+            android:layout_marginLeft="2dp"
+            android:background="#C61919"
+            android:textColor="#ff050505"/>
     </LinearLayout>
 </LinearLayout>

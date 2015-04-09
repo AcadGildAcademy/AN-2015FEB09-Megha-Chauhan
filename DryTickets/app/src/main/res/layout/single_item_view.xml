@@ -39,8 +39,7 @@
                 android:layout_below="@+id/event_name"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:textColor="#C61919"
-                android:layout_weight="0.2"/>
+                android:textColor="#C61919"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -65,7 +64,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="EVENT DATE"
+                android:text="EVENT DATE  "
                 android:id="@+id/t_date"
                 android:textSize="20dp"
                 android:padding="2dp"
@@ -74,8 +73,7 @@
                 android:layout_below="@+id/t_description"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:textColor="#C61919"
-                android:layout_weight="0.2"/>
+                android:textColor="#C61919"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -109,8 +107,7 @@
                 android:layout_below="@+id/t_date"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:textColor="#C61919"
-                android:layout_weight="0.2"/>
+                android:textColor="#C61919"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -144,8 +141,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_below="@+id/t_time"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_weight="0.2"/>
+                android:layout_alignParentStart="true"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -179,8 +175,7 @@
                 android:layout_below="@+id/t_time"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:textColor="#C61919"
-                android:layout_weight="0.2"/>
+                android:textColor="#C61919"/>
 
             <TextView
                 android:layout_width="wrap_content"

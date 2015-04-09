@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#ffffffff">
+    android:layout_height="match_parent">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Event_title"
-        android:textSize="30dp"
+        android:id="@+id/artist_name_select"
         android:textStyle="bold"
-        android:id="@+id/event_name" />
-
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="566dp"
-        android:id="@+id/ticket_list" />
+        android:textSize="20dp"
+        android:textColor="#fe000000"
+        android:padding="15dp"
+        />
 </LinearLayout>

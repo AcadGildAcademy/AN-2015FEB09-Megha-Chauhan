@@ -47,10 +47,10 @@ public class First_page extends ActionBarActivity
             Intent intent=new Intent(this, Now_on_sale_firstpage.class);
             startActivity(intent);
         }
-        else if(id==R.id.ticket_booking)
+        else if(id==R.id.artist_detail_information)
         {
-            //Intent intent=new Intent(this, Ticket_booking.class);
-            //startActivity(intent);
+            Intent intent=new Intent(this,Artist_information.class);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }

@@ -13,8 +13,9 @@
         android:layout_height="wrap_content"
         android:text="CLICK here forDETAILS>>"
         android:id="@+id/text"
-        android:textSize="14dp"
+        android:textSize="16dp"
         android:padding="5dp"
-        android:textColor="@color/abc_background_cache_hint_selector_material_dark"
+        android:textColor="#fe000000"
+        android:textStyle="bold"
         android:layout_gravity="center_horizontal" />
 </LinearLayout>
