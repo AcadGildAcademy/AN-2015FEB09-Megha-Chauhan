@@ -1,4 +1,4 @@
-package com.example.megha.drytickets;
+package com.example.megha.drytickets.Activities;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -14,6 +14,9 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.megha.drytickets.R;
+import com.example.megha.drytickets.ServiceHandler;
 
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;

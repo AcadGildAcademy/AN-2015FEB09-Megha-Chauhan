@@ -1,4 +1,4 @@
-package com.example.megha.drytickets;
+package com.example.megha.drytickets.Utils;
 
 /**
  * Created by megha on 4/2/2015.

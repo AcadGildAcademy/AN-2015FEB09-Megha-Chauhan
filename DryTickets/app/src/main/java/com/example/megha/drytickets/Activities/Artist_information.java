@@ -1,13 +1,15 @@
-package com.example.megha.drytickets;
+package com.example.megha.drytickets.Activities;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.widget.ListView;
+
+import com.example.megha.drytickets.JSONfunction;
+import com.example.megha.drytickets.Adapters.ListViewAdapter_artists;
+import com.example.megha.drytickets.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -28,10 +30,10 @@ public class Artist_information extends Activity
     ListViewAdapter_artists adapter;
     ProgressDialog mProgressDialog;
     ArrayList<HashMap<String, String>> arraylist;
-    static String ARTIST_ID = "artist_id";
-    static String ARTIST_NAME = "artist_name";
-    static String ARTIST_DESCRIPTION = "artist_description";
-    static String ARTIST_PHOTO_PATH = "artist_photo_path";
+    public static String ARTIST_ID = "artist_id";
+    public static String ARTIST_NAME = "artist_name";
+    public static String ARTIST_DESCRIPTION = "artist_description";
+    public static String ARTIST_PHOTO_PATH = "artist_photo_path";
 
     @Override
     public void onCreate(Bundle savedInstanceState)

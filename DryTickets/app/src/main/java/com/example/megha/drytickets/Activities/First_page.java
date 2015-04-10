@@ -1,4 +1,4 @@
-package com.example.megha.drytickets;
+package com.example.megha.drytickets.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+
+import com.example.megha.drytickets.R;
 
 /**
  * Created by megha on 3/20/2015.

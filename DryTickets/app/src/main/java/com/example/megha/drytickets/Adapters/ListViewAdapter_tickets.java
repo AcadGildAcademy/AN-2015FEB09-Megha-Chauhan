@@ -1,4 +1,4 @@
-package com.example.megha.drytickets;
+package com.example.megha.drytickets.Adapters;
 /**
  * Created by DELL on 21-03-2015.
  */
@@ -14,11 +14,12 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.megha.drytickets.ImageLoader;
+import com.example.megha.drytickets.Activities.Ticket_booking;
+import com.example.megha.drytickets.Utils.ImageLoader;
 import com.example.megha.drytickets.R;
+import com.example.megha.drytickets.Utils.Seat_allocation;
 
 public class ListViewAdapter_tickets extends BaseAdapter {
 
@@ -49,8 +50,7 @@ public class ListViewAdapter_tickets extends BaseAdapter {
     }
     public View getView(final int position, View convertView, ViewGroup parent)
     {
-        TextView type_category;
-        TextView price;
+        TextView type_category,price;
         Button button;
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View itemView = inflater.inflate(R.layout.ticket_selection, parent, false);

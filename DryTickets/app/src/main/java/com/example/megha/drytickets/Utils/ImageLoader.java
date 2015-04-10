@@ -1,4 +1,4 @@
-package com.example.megha.drytickets;
+package com.example.megha.drytickets.Utils;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -21,8 +21,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import android.os.Handler;
-
-import java.util.logging.LogRecord;
 
 import static com.example.megha.drytickets.R.drawable.abc_ab_share_pack_holo_dark;
 

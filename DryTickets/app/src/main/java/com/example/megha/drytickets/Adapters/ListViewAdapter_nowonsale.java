@@ -1,4 +1,4 @@
-package com.example.megha.drytickets;
+package com.example.megha.drytickets.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,10 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import com.example.megha.drytickets.ImageLoader;
-import com.example.megha.drytickets.Now_on_sale_firstpage;
+
+import com.example.megha.drytickets.Activities.Now_on_sale_firstpage;
+import com.example.megha.drytickets.Activities.SingleItemView;
+import com.example.megha.drytickets.Utils.ImageLoader;
 import com.example.megha.drytickets.R;
-import com.example.megha.drytickets.SingleItemView;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 

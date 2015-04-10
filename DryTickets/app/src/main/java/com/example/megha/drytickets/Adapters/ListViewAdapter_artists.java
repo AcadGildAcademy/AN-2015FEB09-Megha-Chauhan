@@ -1,4 +1,4 @@
-package com.example.megha.drytickets;
+package com.example.megha.drytickets.Adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,12 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.megha.drytickets.Activities.Artist_detail_information;
+import com.example.megha.drytickets.Activities.Artist_information;
+import com.example.megha.drytickets.Utils.ImageLoader;
+import com.example.megha.drytickets.R;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 /**

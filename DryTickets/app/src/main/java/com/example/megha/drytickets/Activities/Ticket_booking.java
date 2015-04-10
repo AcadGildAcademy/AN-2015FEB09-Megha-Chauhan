@@ -1,12 +1,16 @@
-package com.example.megha.drytickets;
+package com.example.megha.drytickets.Activities;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.widget.ListView;
+
+import com.example.megha.drytickets.JSONfunction;
+import com.example.megha.drytickets.Adapters.ListViewAdapter_tickets;
+import com.example.megha.drytickets.R;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,19 +28,45 @@ public class Ticket_booking extends Activity
     ListViewAdapter_tickets adapter;
     ProgressDialog mProgressDialog;
     ArrayList<HashMap<String, String>> arraylist;
-    static String ID = "id";
-    static String TYPE_CATEGORY = "type_category";
-    static String PRICE = "price";
-    static String EVENT_ID = "event_id";
-    static String EVENT_NAME = "event_name";
+    //Spinner spinner = (Spinner) findViewById(R.id.spinner);
+    //String[] seats;
+    public static String ID = "id";
+    public static String TYPE_CATEGORY = "type_category";
+    public static String PRICE = "price";
+    public static String EVENT_ID = "event_id";
+    public static String EVENT_NAME = "event_name";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ticket_listview);
         new DownloadJSON().execute();
         getActionBar();
+
+       /* ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,seats);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(dataAdapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,int position, long id)
+            {
+                /*TextView total= (TextView) findViewById(R.id.total_price);
+                TextView price= (TextView) findViewById(R.id.price);
+                Spinner spinner= (Spinner) findViewById(R.id.spinner);
+                String val1= (String) price.getText();
+                String val2= (String) spinner.getSelectedItem();
+                String sum=val1+val2;
+                total.setText("$"+sum);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+
+            }
+        });*/
     }
-        // DownloadJSON AsyncTask
+
+    // DownloadJSON AsyncTask
     private class DownloadJSON extends AsyncTask<Void, Void, Void>
     {
         @Override
